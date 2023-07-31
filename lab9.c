@@ -59,6 +59,7 @@ struct HashType * freeTable(struct HashType * hash_table){
 			free(tmp2);
 		}
 	}
+	return NULL;
 }
 
 // parses input file to an integer array
@@ -147,4 +148,5 @@ int main(void)
 		hash_table = insertRecord(hash_table, pRecords[i]);
 	}
 	displayRecordsInHash(hash_table, TABLE_SIZE);
+	hash_table = freeTable(hash_table);
 }
